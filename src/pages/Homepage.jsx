@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger);
-const HomePage = () => {
+const Homepage = () => {
   const navigate = useNavigate()
   useEffect(() => {
   
@@ -156,4 +156,4 @@ const HomePage = () => {
   )
 }
 
-export default HomePage
+export default Homepage
