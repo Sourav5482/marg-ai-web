@@ -10,7 +10,7 @@ const BookingPage = () => {
     passengers: 1,
     payment: 'card'
   })
-
+//add comments
   const [ticket, setTicket] = useState(null)
   const [loading, setLoading] = useState(false)
 
