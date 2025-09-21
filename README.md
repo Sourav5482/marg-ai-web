@@ -35,7 +35,7 @@ A modern, responsive web application built with **React 18**, **Vite 7**, **Tail
 ## 📁 Project Structure
 
 ```
-marg-ai/
+marg-ai-web/
 ├── public/
 │   └── vite.svg
 ├── src/
