@@ -109,7 +109,13 @@ const BookingPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
+      
       <div className="max-w-lg w-full bg-white shadow-xl rounded-lg p-6">
+        {/* book ticket & show ticket btn */}
+        <div className="flex justify-around mb-6 space-x-4">
+          <button className="w-full bg-blue-400 text-white py-2 rounded font-semibold hover:bg-blue-700 transition disabled:opacity-50">Book Ticket</button>
+        <button className="w-full bg-blue-400 text-white py-2 rounded font-semibold hover:bg-blue-700 transition disabled:opacity-50">Show Ticket</button> 
+        </div>
         <h1 className="text-2xl font-bold mb-4 text-center">Book Your Ticket</h1>
         <form onSubmit={handleSubmit} className="space-y-4">
 
@@ -153,8 +159,9 @@ const BookingPage = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            <div>
+          <div className="grid grid-cols-2 gap-4 ">
+            {/* //date time picker can be added */}
+            {/* <div>
               <label className="block font-semibold mb-1">Date *</label>
               <input
                 type="date"
@@ -164,8 +171,8 @@ const BookingPage = () => {
                 onChange={e => handleInputChange('date', e.target.value)}
                 className="w-full p-2 border rounded bg-gray-50 focus:border-blue-500 focus:outline-none"
               />
-            </div>
-            <div>
+            </div> */}
+            {/* <div>
               <label className="block font-semibold mb-1">Time</label>
               <input
                 type="time"
@@ -173,7 +180,7 @@ const BookingPage = () => {
                 onChange={e => handleInputChange('time', e.target.value)}
                 className="w-full p-2 border rounded bg-gray-50 focus:border-blue-500 focus:outline-none"
               />
-            </div>
+            </div> */}
           </div>
 
           <div className="grid grid-cols-2 gap-4">
@@ -217,6 +224,7 @@ const BookingPage = () => {
           </button>
         </form>
       </div>
+       
     </div>
   )
 }

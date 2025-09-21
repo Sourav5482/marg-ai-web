@@ -39,7 +39,7 @@ const ContactPage = () => {
     {
       icon: '📞',
       title: 'Phone Support',
-      details: ['+91 98765 43210', '+91 87654 32109'],
+      details: ['+91 7863925118', '+91 7430925118'],
       description: 'Available 24/7 for emergencies'
     },
     {

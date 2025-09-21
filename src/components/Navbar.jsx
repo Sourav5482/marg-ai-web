@@ -6,12 +6,12 @@ const Navbar = () => {
   const [language, setLanguage] = useState('EN')
 
   return (
-    <nav className="fixed top-0 w-full z-50 glass 
+    <nav className="fixed top-0 w-full z-50 glass  
      bg-white/20 backdrop-blur-md border-b border-white/10 text-black">
       <div className="container mx-auto px-4 text-black">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="text-2xl font-bold text-black">
-            Marg-AI
+            Marg AI
           </Link>
           
           {/* Desktop Menu */}
