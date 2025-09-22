@@ -156,7 +156,7 @@ const BusTrackerPage = () => {
                 <div className="text-gray-500 text-sm">On Schedule</div>
               </div>
               <div className="bg-white shadow-md p-4 rounded-lg text-center">
-                <div className="text-2xl font-bold text-gray-800">
+                <div className="text-2xl font-bold text-green-500">
                   {Math.round(busData.reduce((acc, bus) => acc + bus.rating, 0) / busData.length * 10) / 10}★
                 </div>
                 <div className="text-gray-500 text-sm">Avg Rating</div>

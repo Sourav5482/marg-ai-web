@@ -312,14 +312,14 @@ const BookingPage = () => {
         {/* book ticket & show ticket btn */}
         <div className="flex justify-center mb-6  space-x-5 ">
           <button
-            className="w-full bg-blue-700 text-white py-2 rounded-3xl font-semibold hover:bg-blue-300 transition disabled:opacity-50"
+            className="w-full bg-[#faab4aee] text-white py-2 rounded-3xl font-semibold  transition disabled:opacity-50"
             onClick={() => setShowTicket(false)}
             type="button"
           >
             Book Ticket
           </button>
           <button
-            className="w-full bg-blue-400 text-white py-2 rounded-3xl font-semibold hover:bg-blue-700 transition disabled:opacity-50"
+            className="w-full bg-[#faab4aa4] text-white py-2 rounded-3xl font-semibold  transition disabled:opacity-50"
             onClick={handleShowTicket}
             type="button"
           >
@@ -400,7 +400,7 @@ const BookingPage = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-blue-600 text-white py-2 rounded font-semibold hover:bg-blue-700 transition disabled:opacity-50"
+            className="w-full bg-[#faab4aee] text-white py-2 rounded font-semibold hover:bg-[#faab4abb] disabled:opacity-50"
           >
             {loading ? 'Processing...' : `Book Ticket - ₹${calculateFare()}`}
           </button>

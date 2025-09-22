@@ -35,7 +35,7 @@ const Navbar = () => {
               <option value="HI" className='text-black '>हिं</option>
               <option value="BN" className='text-black '>বাং</option>
             </select>
-            <button className="transform hover:bg-[#faac4a] bg-[#fd9f2dee]  hover:scale-105 text-white px-4 py-1 rounded font-semibold  transition-colors">
+            <button className="transform hover:bg-[#f04242] bg-[#f71a1aee]  hover:scale-105 text-white px-4 py-1 rounded font-semibold  transition-colors">
               {t("sos")}
             </button>
           </div>
