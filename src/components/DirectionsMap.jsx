@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { MapContainer, TileLayer, useMap } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
@@ -12,10 +12,12 @@ function Routing({ from, to }) {
   const routingControlRef = useRef(null);
 
   React.useEffect(() => {
-    if (!map) return;
+    if (!map || !from || !to) return;
 
     if (routingControlRef.current) {
-      map.removeControl(routingControlRef.current);
+      try {
+        map.removeControl(routingControlRef.current);
+      } catch (e) {}
     }
 
     routingControlRef.current = L.Routing.control({
@@ -33,7 +35,9 @@ function Routing({ from, to }) {
 
     return () => {
       if (routingControlRef.current) {
-        map.removeControl(routingControlRef.current);
+        try {
+          map.removeControl(routingControlRef.current);
+        } catch (e) {}
       }
     };
   }, [from, to, map]);
@@ -41,28 +45,71 @@ function Routing({ from, to }) {
   return null;
 }
 
-function DirectionsMap() {
-  const [showDirections, setShowDirections] = React.useState(false);
+async function geocode(address) {
+  const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(
+    address
+  )}`;
+  const res = await fetch(url);
+  const data = await res.json();
+  if (data && data.length > 0) {
+    return [parseFloat(data[0].lat), parseFloat(data[0].lon)];
+  }
+  return null;
+}
 
-  // Howrah Station: 22.5840, 88.3426
-  // Sealdah Station: 22.5656, 88.3700
-  const from = [22.5840, 88.3426];
-  const to = [22.5656, 88.3700];
+function DirectionsMap() {
+  const [fromAddress, setFromAddress] = useState("");
+  const [toAddress, setToAddress] = useState("");
+  const [fromCoords, setFromCoords] = useState(null);
+  const [toCoords, setToCoords] = useState(null);
+  const [error, setError] = useState("");
+
+  const handleShowDirections = async (e) => {
+    e.preventDefault();
+    setError("");
+    const from = await geocode(fromAddress);
+    const to = await geocode(toAddress);
+    if (!from || !to) {
+      setError("Could not find one or both addresses.");
+      return;
+    }
+    setFromCoords(from);
+    setToCoords(to);
+  };
 
   return (
     <div>
-      <button
-        onClick={() => setShowDirections(true)}
-        className="px-4 py-2 bg-blue-500 text-white rounded mb-4"
-      >
-        Show Directions
-      </button>
+      <form onSubmit={handleShowDirections} className="mb-4 flex flex-col gap-2 max-w-md">
+        <input
+          type="text"
+          placeholder="From address"
+          value={fromAddress}
+          onChange={(e) => setFromAddress(e.target.value)}
+          className="border px-2 py-1 rounded"
+          required
+        />
+        <input
+          type="text"
+          placeholder="To address"
+          value={toAddress}
+          onChange={(e) => setToAddress(e.target.value)}
+          className="border px-2 py-1 rounded"
+          required
+        />
+        <button
+          type="submit"
+          className="px-4 py-2 bg-blue-500 text-white rounded"
+        >
+          Show Directions
+        </button>
+        {error && <div className="text-red-500">{error}</div>}
+      </form>
       <MapContainer center={center} zoom={13} style={{ height: "500px", width: "100%" }}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.in/">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {showDirections && <Routing from={from} to={to} />}
+        {fromCoords && toCoords && <Routing from={fromCoords} to={toCoords} />}
       </MapContainer>
     </div>
   );
