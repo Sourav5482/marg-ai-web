@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useLanguage } from '../context/LanguageContext'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const [language, setLanguage] = useState('EN')
+  const { language, setLanguage, t } = useLanguage()
 
   return (
     <nav className="fixed top-0 w-full z-50 glass  
@@ -16,12 +17,12 @@ const Navbar = () => {
           
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8 ">
-            <Link to="/" className="text-black hover:text-accent transition-colors">Home</Link>
-            <Link to="/features" className="text-black hover:text-accent transition-colors">Features</Link>
-            <Link to="/tracker" className="text-black hover:text-accent transition-colors">Bus Tracker</Link>
-            <Link to="/booking" className="text-black hover:text-accent transition-colors">Ticket</Link>
-            <Link to="/dashboard" className="text-black hover:text-accent transition-colors">Dashboard</Link>
-            <Link to="/contact" className="text-black hover:text-accent transition-colors">Contact</Link>
+            <Link to="/" className="text-black hover:text-accent transition-colors">{t("home")}</Link>
+            <Link to="/features" className="text-black hover:text-accent transition-colors">{t("features")}</Link>
+            <Link to="/tracker" className="text-black hover:text-accent transition-colors">{t("tracker")}</Link>
+            <Link to="/booking" className="text-black hover:text-accent transition-colors">{t("booking")}</Link>
+            <Link to="/dashboard" className="text-black hover:text-accent transition-colors">{t("dashboard")}</Link>
+            <Link to="/contact" className="text-black hover:text-accent transition-colors">{t("contact")}</Link>
           </div>
 
           <div className="hidden md:flex items-center space-x-4 text-black  ">
@@ -35,7 +36,7 @@ const Navbar = () => {
               <option value="BN" className='text-black '>বাং</option>
             </select>
             <button className="transform hover:bg-[#faac4a] bg-[#fd9f2dee]  hover:scale-105 text-white px-4 py-1 rounded font-semibold  transition-colors">
-              SOS
+              {t("sos")}
             </button>
           </div>
 
@@ -51,12 +52,12 @@ const Navbar = () => {
         {/* Mobile Menu */}
         {isOpen && (
           <div className="md:hidden py-4 space-y-4">
-            <Link to="/" className="block text-black hover:text-accent">Home</Link>
-            <Link to="/features" className="block text-black hover:text-accent">Features</Link>
-            <Link to="/tracker" className="block text-black hover:text-accent">Bus Tracker</Link>
-            <Link to="/booking" className="block text-black hover:text-accent">Ticket</Link>
-            <Link to="/dashboard" className="block text-black hover:text-accent">Dashboard</Link>
-            <Link to="/contact" className="block text-black hover:text-accent">Contact</Link>
+            <Link to="/" className="block text-black hover:text-accent">{t("home")}</Link>
+            <Link to="/features" className="block text-black hover:text-accent">{t("features")}</Link>
+            <Link to="/tracker" className="block text-black hover:text-accent">{t("tracker")}</Link>
+            <Link to="/booking" className="block text-black hover:text-accent">{t("booking")}</Link>
+            <Link to="/dashboard" className="block text-black hover:text-accent">{t("dashboard")}</Link>
+            <Link to="/contact" className="block text-black hover:text-accent">{t("contact")}</Link>
           </div>
         )}
       </div>

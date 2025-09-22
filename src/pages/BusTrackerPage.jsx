@@ -165,7 +165,7 @@ const BusTrackerPage = () => {
           </div>
 
           {/* Bus List */}
-          <div className="space-y-4">
+          <div className="space-y-5">
             <h2 className="text-2xl font-bold text-gray-800 mb-4">
               Active Buses ({filteredBuses.length})
             </h2>

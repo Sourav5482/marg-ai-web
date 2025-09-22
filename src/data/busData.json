@@ -1,0 +1,50 @@
+[
+  {
+    "id": "BUS101",
+    "name": "Kolkata Express",
+    "location": [22.5726, 88.3639],
+    "destination": "Howrah Station"
+  },
+  {
+    "id": "BUS202",
+    "name": "Salt Lake Shuttle",
+    "location": [22.5850, 88.4152],
+    "destination": "Salt Lake Sector V"
+  },
+  {
+    "id": "BUS303",
+    "name": "Airport Link",
+    "location": [22.6547, 88.4467],
+    "destination": "Netaji Subhas Chandra Bose International Airport"
+  },
+  {
+    "id": "WM101",
+    "name": "Kharagpur Local",
+    "location": [22.3460, 87.2310],
+    "destination": "Kharagpur Railway Station"
+  },
+  {
+    "id": "WM202",
+    "name": "Midnapore City Shuttle",
+    "location": [22.4286, 87.3227],
+    "destination": "Midnapore Bus Stand"
+  },
+  {
+    "id": "WM303",
+    "name": "Dantan Express",
+    "location": [22.3475, 87.4240],
+    "destination": "Dantan Junction"
+  },
+  {
+    "id": "WM404",
+    "name": "Ghatal Link",
+    "location": [22.5800, 87.7200],
+    "destination": "Ghatal Town Center"
+  },
+  {
+    "id": "WM505",
+    "name": "Balichak Airport Shuttle",
+    "location": [22.2900, 87.2100],
+    "destination": "Nearest Airport"
+  }
+]
