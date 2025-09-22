@@ -73,7 +73,7 @@ const Homepage = () => {
           <div className="max-w-4xl mx-auto ">
             <h1 className="text-5xl md:text-7xl font-bold text-gray-800 mb-6 leading-tight">
               <span className="title1 block ">Smart Transport</span>
-              <span className="title2 py-2 block bg-gradient-to-r from-[#3ebeb3] via-[#6dd5ed] to-[#3b82f6] bg-clip-text text-transparent">
+              <span className="title2 py-2 block bg-gradient-to-r bg-[#50c878] bg-clip-text text-transparent">
                 Made Simple
               </span>
             </h1>
