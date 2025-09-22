@@ -67,13 +67,14 @@ const Homepage = () => {
 
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    // 36454f
+    <div className="min-h-screen  ">
       <div className="pt-20 pb-16">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto ">
             <h1 className="text-5xl md:text-7xl font-bold  text-gray-800 mb-6 leading-tight">
               <span className="title1 block ">Smart Transport</span>
-              <span className="title2 py-2 block bg-gradient-to-r bg-[#b1ddf1] bg-clip-text text-transparent">
+              <span className="title2 py-2 block bg-gradient-to-r  dark:bg-[#7E6551] bg-[#21c063] bg-clip-text text-transparent">
                 Made Simple
               </span>
             </h1>
